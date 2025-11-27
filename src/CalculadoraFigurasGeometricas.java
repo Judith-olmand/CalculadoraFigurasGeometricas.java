@@ -33,7 +33,7 @@ public class CalculadoraFigurasGeometricas {
             primeraOpcion = sc.nextInt();
             switch (primeraOpcion) {
                 case 1:
-                    if (contador < figurasMaximas) {
+                    if (contador == figurasMaximas-1) {
                         System.out.println(" Lo siento, has llegado al límite de figuras permitidas");
                         break;
                     } else {
