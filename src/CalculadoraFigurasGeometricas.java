@@ -52,7 +52,6 @@ public class CalculadoraFigurasGeometricas {
                     opcionValida = true;
                 } catch (InputMismatchException e){ //captura el erro de meter texto en lugar de números
                     System.out.println("✘✘✘ Error, la opción no puede ser texto");
-                    System.out.println();
                     sc.nextLine();
                     opcionValida = false;
                 }
