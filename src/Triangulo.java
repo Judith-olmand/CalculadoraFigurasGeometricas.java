@@ -8,8 +8,14 @@ public class Triangulo extends Figura{
      * Creo un constructor para los tiangulos equilateros
      * @param lado1
      * @param altura --> para el area
+     * @throws NumeroNegativo lanza la excepción que habiamos creado antes con un mensaje personalizado.
+     * La pongo aquí porque es el constructor el que puede lanzar la excepción cuando al intentar pasar los parámetros
+     * estos sean negativos.
      */
-    public Triangulo(double lado1, double altura){
+    public Triangulo(double lado1, double altura) throws NumeroNegativo {
+        if (lado1 < 0 || altura < 0){
+            throw new NumeroNegativo("✘✘✘ Las medidas deben ser números positivos.");
+        }
         base = lado1;
         this.lado1 = lado1;
         lado2 = lado1;
@@ -21,8 +27,14 @@ public class Triangulo extends Figura{
      * @param lado1
      * @param lado2
      * @param altura --> para el area
-     */
-    public Triangulo(double lado1, double lado2, double altura){ //constructor para triangulo isosceles
+     * @throws NumeroNegativo lanza la excepción que habiamos creado antes con un mensaje personalizado.
+     * La pongo aquí porque es el constructor el que puede lanzar la excepción cuando al intentar pasar los parámetros
+     * estos sean negativos.
+     * */
+    public Triangulo(double lado1, double lado2, double altura) throws NumeroNegativo{
+        if (lado1 < 0 || altura < 0){
+            throw new NumeroNegativo("✘✘✘ Las medidas deben ser números positivos.");
+        }
         base = lado1;
         this.lado1 = lado1;
         this.lado2 = lado2;
@@ -35,8 +47,14 @@ public class Triangulo extends Figura{
      * @param lado1
      * @param lado2
      * @param altura --> para el area
-     */
-    public Triangulo(double base,double lado1, double lado2, double altura){
+     * @throws NumeroNegativo lanza la excepción que habiamos creado antes con un mensaje personalizado.
+     * La pongo aquí porque es el constructor el que puede lanzar la excepción cuando al intentar pasar los parámetros
+     * estos sean negativos.
+     * */
+    public Triangulo(double base,double lado1, double lado2, double altura) throws NumeroNegativo{
+        if (lado1 < 0 || altura < 0){
+            throw new NumeroNegativo("✘✘✘ Las medidas deben ser números positivos.");
+        }
         this.base = base;
         this.lado1 = lado1;
         this.lado2 = lado2;
@@ -73,6 +91,18 @@ public class Triangulo extends Figura{
 
     public void setLado2(double lado2) {
         this.lado2 = lado2;
+    }
+
+    @Override
+    public void dibujar() {
+        System.out.println("            * ");
+        System.out.println("          *   * ");
+        System.out.println("        *       * ");
+        System.out.println("      *           * ");
+        System.out.println("    *               * ");
+        System.out.println("  *                   * ");
+        System.out.println("* * * * * * * * * * * * *");
+        System.out.println("");
     }
 
     @Override

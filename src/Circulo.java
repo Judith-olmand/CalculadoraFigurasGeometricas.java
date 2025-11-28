@@ -1,7 +1,17 @@
 public class Circulo extends Figura{
     private double radio;
 
-    public Circulo(double radio){
+    /**
+     * Creo el constructor para esta figura pasando un parámetro
+     * @param radio
+     * @throws NumeroNegativo lanza la excepción que habiamos creado antes con un mensaje personalizado.
+     * La pongo aquí porque es el constructor el que puede lanzar la excepción cuando al intentar pasar los parámetros
+     * estos sean negativos.
+     */
+    public Circulo(double radio) throws NumeroNegativo{
+        if (radio<0){
+            throw new NumeroNegativo("✘✘✘ El radio debe ser positivo.");
+        }
         this.radio = radio;
     }
 
@@ -11,6 +21,24 @@ public class Circulo extends Figura{
 
     public void setRadio(double radio) {
         this.radio = radio;
+    }
+
+    @Override
+    public void dibujar() {
+        System.out.println("          * * * * * *     ");
+        System.out.println("      * *             * *   ");
+        System.out.println("    *                     * ");
+        System.out.println("  *                         *  ");
+        System.out.println("*                             * ");
+        System.out.println("*                             * ");
+        System.out.println("*                             * ");
+        System.out.println("*                             * ");
+        System.out.println("*                             * ");
+        System.out.println("  *                         *  ");
+        System.out.println("    *                     * ");
+        System.out.println("      * *             * *   ");
+        System.out.println("          * * * * * *     ");
+        System.out.println("");
     }
 
     @Override
